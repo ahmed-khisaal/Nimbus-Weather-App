@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nimbus — Weather Intelligence</title>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Animated sky background -->
+  <div class="sky-bg">
+    <div class="cloud-shape c1"></div>
+    <div class="cloud-shape c2"></div>
+    <div class="cloud-shape c3"></div>
+  </div>
+  <div class="sun-decoration"></div>
+
+  <!-- App shell -->
+  <div class="app-shell">
+
+    <!-- Header -->
+    <div class="app-header">
+      <div class="brand">
+        <span class="brand-dot"></span> Nimbus
+      </div>
+      <div id="last-updated" style="font-size:12px;color:var(--text3);"></div>
+    </div>
+
+    <!-- Search bar -->
+    <div class="search-bar">
+      <input
+        class="search-input"
+        id="city-input"
+        type="text"
+        placeholder="Search city, country..."
+        autocomplete="off"
+      />
+      <button class="loc-btn" id="loc-btn" title="Use my location">📍</button>
+      <button class="search-btn" id="search-btn">Search</button>
+    </div>
+
+    <!-- Error message -->
+    <div id="error-box" style="display:none;" class="error-msg">
+      ⚠️ <span id="error-text"></span>
+    </div>
+
+    <!-- Dynamic content injected by app.js -->
+    <div id="content">
+      <div class="main-card">
+        <div class="empty-state">
+          <div class="empty-icon">🌤️</div>
+          <div class="empty-title">Where are you?</div>
+          <div class="empty-sub">Search for a city or use your current location to get started.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="app-footer">
+      Nimbus Weather &middot; Powered by Open-Meteo &amp; Real-time data
+    </div>
+
+  </div><!-- /.app-shell -->
+
+  <script src="app.js"></script>
+</body>
+</html>
